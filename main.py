@@ -16,7 +16,12 @@ facts = [
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html")
+    napis = "To jest napis z pythona"
+    return render_template("index.html", text=napis)
+
+@app.route("/<asr>")
+def number_page(asr):
+    return "Test " + asr
 
 @app.route("/losowy_fakt")
 def random_fact():
